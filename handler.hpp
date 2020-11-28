@@ -1,0 +1,1 @@
+void inputA(std::vector<std::string> user_args);
