@@ -1,22 +1,12 @@
 #include <iostream>
 #include <vector>
-#include <cstring>
-#include <cctype>
-
-#include "colours.hpp"
-#include "handler.hpp"
-
-void clear() {
-	std::cout << std::string(100, '\n');
-	std::cout << "\033[2J";
-}
-
+#include "include/util/colors/Colors.hpp"
+#include "include/util/handler/Handler.hpp"
 int main() {
-	clear();
+    system("clear");
 	while(true) {
-		std::string input_raw = "";
 		std::vector<std::string> args;
-		std::string output = cyan() + "root " + boldRed() + "→" + reset() + " ";
+		std::string input_raw = "", output = cyan() + "root " + boldRed() + "→" + reset() + " ";
 		std::cout << output;
 		std::getline (std::cin, input_raw);
 		input_raw += " ";

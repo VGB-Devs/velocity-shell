@@ -1,3 +1,4 @@
+#include <iostream>
 std::string red();
 std::string boldRed();
 std::string green();
