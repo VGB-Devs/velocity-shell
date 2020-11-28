@@ -1,2 +1,2 @@
 compile:
-	g++ main.cpp shell/Shell.cpp shell/commands/Command.cpp shell/commands/exec/Exec.cpp util/colors/Colors.cpp util/prefix/Prefix.cpp util/handler/Handler.cpp -o velocity-shell
+	g++ main.cpp shell/commands/Command.cpp shell/commands/echo/Echo.cpp shell/commands/exec/Exec.cpp shell/Input.cpp shell/Shell.cpp util/colors/Colors.cpp util/prefix/Prefix.cpp -o velocity-shell

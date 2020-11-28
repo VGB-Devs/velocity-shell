@@ -1,7 +1,8 @@
 #include "../Command.hpp"
+#include <vector>
 #include <iostream>
-class Exec : public Command {
+class Echo : public Command {
     public:
-        Exec();
+        Echo();
         int run(std::vector<std::string> args);
 };
