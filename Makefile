@@ -1,2 +1,2 @@
 compile:
-	g++ main.cpp colours.cpp handler.cpp -o shell
+	g++ main.cpp colours.cpp handler.cpp utils.cpp -o shell
