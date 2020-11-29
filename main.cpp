@@ -2,6 +2,8 @@
 #include <vector>
 #include "include/util/colors/Colors.hpp"
 #include "include/shell/Shell.hpp"
+#include "include/util/output/Output.hpp"
+
 int main() {
     Shell vsh;
 	system("clear");
@@ -14,11 +16,14 @@ int main() {
 		} else if(args[0] == "exec") {
 			vsh.run("exec", args);
         } else if(args[0] == "clear") {
-            system("clear");
+            //system("clear");
+			std::cout << warning("testing", "yeah ok no one cares it works? maybe.") << std::endl;
 		} else if(args[0] == "exit") {
 			exit(0);
         } else  {
-			std::cout << red() + "→ Error " + reset() + "'" + args[0] + "' is not a valid command.\n";
+			std::string err = "'" + args[0] + "' is not valid command!";
+			std::cout << error(err) << std::endl;
+			//std::cout << red() + "→ error " + reset() + "'" + args[0] + "' is not a valid command.\n";
 		}
 	}
 }
