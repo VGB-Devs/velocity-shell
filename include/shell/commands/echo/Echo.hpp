@@ -4,5 +4,5 @@
 class Echo : public Command {
     public:
         Echo();
-        int run(std::vector<std::string> args);
+        std::string run(std::vector<std::string> args);
 };

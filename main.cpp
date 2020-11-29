@@ -11,21 +11,10 @@ int main() {
 		std::cout << cyan() + "root " + boldRed() + "→" + reset() + "  ";
 		std::vector<std::string> args = vsh.input.get();
 		if(args.empty()) {
-        } else if(args[0] == "echo") {
-			vsh.run("echo", args);
-		} else if(args[0] == "exec") {
-			vsh.run("exec", args);
-        } else if(args[0] == "clear") {
-            //system("clear");
-			std::cout << warning("testing", "yeah ok no one cares it works? maybe.") << std::endl;
-		} else if(args[0] == "exit") {
-			exit(0);
-        } else  {
-			std::string err = "'" + args[0] + "' is not valid command!";
-			std::cout << error(err) << std::endl;
-			//std::cout << red() + "→ error " + reset() + "'" + args[0] + "' is not a valid command.\n";
+        } else if(vsh.commands().find(args[0]) != vsh.commands().end()) {
+			vsh.run(args[0], args);
+		} else {
+			std::cout << error("'" + args[0] + "' is not valid command!") << std::endl;
 		}
 	}
 }
-
-// →

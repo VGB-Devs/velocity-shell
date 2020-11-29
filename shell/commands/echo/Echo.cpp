@@ -1,16 +1,11 @@
 #include "../../../include/shell/commands/echo/Echo.hpp"
-#include "../../../include/util/colors/Colors.hpp"
-#include "../../../include/util/prefix/Prefix.hpp"
-#include "../../../include/util/output/Output.hpp"
-
 #include <iostream>
 Echo::Echo() : Command("echo", "echo something", "echo <args>") {
 
 };
-int Echo::run(std::vector<std::string> cmdArgs) { 
+std::string Echo::run(std::vector<std::string> cmdArgs) { 
     if(cmdArgs.size() == 1) { 
-        std::cout << error("please provide input!") << std::endl;
-        return 0;
+        return "\n";
     }
 
     std::string msg = "";
@@ -19,6 +14,5 @@ int Echo::run(std::vector<std::string> cmdArgs) {
         msg += cmdArgs[i] + " ";
     }
 
-    std::cout << success("echo", msg) << std::endl;
-    return 0;
+    return msg;
 };

@@ -1,7 +1,7 @@
-#include "../Command.hpp"
 #include <iostream>
-class Exec : public Command {
+#include "../Command.hpp"
+class Pwd : public Command {
     public:
-        Exec();
+        Pwd();
         std::string run(std::vector<std::string> args);
 };

@@ -6,7 +6,6 @@
 Exec::Exec() : Command("exec", "execute something", "exec <args>") {
 
 };
-int Exec::run(std::vector<std::string> cmdArgs) { 
-    std::cout << boldGreen() + prefix() + " output " + reset() << "gotta implement this too" << std::endl;
-    return 0;
+std::string Exec::run(std::vector<std::string> cmdArgs) { 
+    return "gotta implement this too";
 };

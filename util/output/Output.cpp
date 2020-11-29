@@ -3,8 +3,8 @@
 #include "../../include/util/colors/Colors.hpp"
 #include "../../include/util/prefix/Prefix.hpp"
 
-std::string success(std::string type, std::string message) {
-    std::string output = green() + prefix() + " " + type + reset() + " " + message;
+std::string success(std::string message) {
+    std::string output = green() + prefix() + reset() + " " + message;
     return output;
 }
 
