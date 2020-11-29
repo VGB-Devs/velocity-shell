@@ -5,7 +5,7 @@
 class Shell {
     public:
         Shell();
-        int run(std::string commandName, std::vector<std::string> commandArgs);
+        int run(const std::string& commandName, const std::vector<std::string>& commandArgs);
         ShellInput input;
         std::map<std::string, Command*>& commands() { return this->shellCommands; }
     private:

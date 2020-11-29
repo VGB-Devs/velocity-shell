@@ -3,7 +3,7 @@
 Echo::Echo() : Command("echo", "echo something", "echo <args>") {
 
 };
-std::string Echo::run(std::vector<std::string> cmdArgs) { 
+std::string Echo::run(const std::vector<std::string>& cmdArgs) { 
     if(cmdArgs.size() == 1) { 
         return "\n";
     }
@@ -14,5 +14,5 @@ std::string Echo::run(std::vector<std::string> cmdArgs) {
         msg += cmdArgs[i] + " ";
     }
 
-    return msg;
+    return msg + "\n";
 };

@@ -1,5 +1,5 @@
 #include <iostream>
 
-std::string success(std::string messageOut);
-std::string error(std::string messageOut);
-std::string warning(std::string type, std::string message);
+std::string success(const std::string& messageOut);
+std::string error(const std::string& messageOut);
+std::string warning(const std::string& message);

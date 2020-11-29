@@ -4,8 +4,8 @@
 Pwd::Pwd() : Command("pwd", "print the working directory", "pwd") {
 
 }
-std::string Pwd::run(std::vector<std::string> args) {
+std::string Pwd::run(const std::vector<std::string>& args) {
     char buffer[PATH_MAX];
     getcwd(buffer, sizeof(buffer));
-    return buffer;
+    return buffer + '\n';
 }

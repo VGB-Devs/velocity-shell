@@ -1,7 +1,8 @@
 #include <iostream>
 #include "../Command.hpp"
-class Pwd : public Command {
+
+class Clear : public Command {
     public:
-        Pwd();
+        Clear();
         std::string run(const std::vector<std::string>& args);
 };
