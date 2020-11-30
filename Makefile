@@ -9,6 +9,7 @@ compile:
 	shell/commands/read/Read.cpp \
 	shell/commands/write/Write.cpp \
 	shell/commands/file/File.cpp \
+	shell/commands/delete/Delete.cpp \
 	shell/Input.cpp \
 	shell/Shell.cpp \
 	util/colors/Colors.cpp \

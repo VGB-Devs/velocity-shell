@@ -11,6 +11,7 @@
 #include "../include/shell/commands/read/Read.hpp"
 #include "../include/shell/commands/write/Write.hpp"
 #include "../include/shell/commands/file/File.hpp"
+#include "../include/shell/commands/delete/Delete.hpp"
 
 Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("echo", new Echo()));
@@ -20,6 +21,7 @@ Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("read", new Read()));
     this->commands().insert(std::pair<std::string, Command*>("write", new Write()));
     this->commands().insert(std::pair<std::string, Command*>("file", new File()));
+    this->commands().insert(std::pair<std::string, Command*>("delete", new Delete()));
 };
 int Shell::run(const std::string& commandName, const std::vector<std::string>& commandArgs) {
     Command* cmd = this->commands().at(commandName);
