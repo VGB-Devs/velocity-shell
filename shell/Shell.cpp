@@ -12,6 +12,7 @@
 #include "../include/shell/commands/write/Write.hpp"
 #include "../include/shell/commands/file/File.hpp"
 #include "../include/shell/commands/delete/Delete.hpp"
+#include "../include/shell/commands/reset/Reset.hxx"
 
 Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("echo", new Echo()));
@@ -22,10 +23,15 @@ Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("write", new Write()));
     this->commands().insert(std::pair<std::string, Command*>("file", new File()));
     this->commands().insert(std::pair<std::string, Command*>("delete", new Delete()));
+    this->commands().insert(std::pair<std::string, Command*>("reset", new Reset()));
 };
 int Shell::run(const std::string& commandName, const std::vector<std::string>& commandArgs) {
     Command* cmd = this->commands().at(commandName);
     std::string output = cmd->run(commandArgs);
     std::cout << output::success(output);
     return 0;
+}
+
+std::string &Shell::prefix() {
+    return this->shellPrefix;
 }

@@ -7,14 +7,15 @@
 
 int main() {
     Shell vsh;
+	/*
 	std::string prompt;
   	std::ifstream file ("prompt");
   	if (file.is_open()) getline(file, prompt);
 	if(prompt == "") prompt = cyan() + "root " + boldRed() + "→" + reset() + "  ";
+	*/
 	system("clear");
 	while(true) {
-		std::cout << prompt;
-		//std::cout << cyan() + "root " + boldRed() + "→" + reset() + "  ";
+		std::cout << vsh.prefix();
 		std::vector<std::string> args = vsh.input.get();
 		if(args.empty()){
         } else if(vsh.commands().find(args[0]) != vsh.commands().end()) {
@@ -23,5 +24,5 @@ int main() {
 			std::cout << output::error("\"" + args[0] + "\" is not a valid command!") << std::endl;
 		}
 	}
-	file.close();
+	// file.close();
 }

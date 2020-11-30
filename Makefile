@@ -10,9 +10,11 @@ compile:
 	shell/commands/write/Write.cpp \
 	shell/commands/file/File.cpp \
 	shell/commands/delete/Delete.cpp \
+	shell/commands/reset/Reset.cc \
 	shell/Input.cpp \
 	shell/Shell.cpp \
 	util/colors/Colors.cpp \
 	util/prefix/Prefix.cpp \
 	util/output/Output.cpp \
+	util/string/String.cc \
 	-o vsh
