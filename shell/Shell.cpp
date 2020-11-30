@@ -1,4 +1,6 @@
 #include <map>
+#include <limits.h>
+#include <stdlib.h>
 #include "../include/shell/Shell.hpp"
 
 #include "../include/shell/commands/Command.hpp"
@@ -12,7 +14,8 @@
 #include "../include/shell/commands/write/Write.hpp"
 #include "../include/shell/commands/file/File.hpp"
 #include "../include/shell/commands/delete/Delete.hpp"
-#include "../include/shell/commands/reset/Reset.hxx"
+#include "../include/shell/commands/prompt/Prompt.hpp"
+#include "../include/shell/commands/exit/Exit.hpp"
 
 Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("echo", new Echo()));
@@ -23,7 +26,14 @@ Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("write", new Write()));
     this->commands().insert(std::pair<std::string, Command*>("file", new File()));
     this->commands().insert(std::pair<std::string, Command*>("delete", new Delete()));
-    this->commands().insert(std::pair<std::string, Command*>("reset", new Reset()));
+    this->commands().insert(std::pair<std::string, Command*>("prompt", new Prompt(this)));
+    this->commands().insert(std::pair<std::string, Command*>("exit", new Exit()));
+    char cwd[PATH_MAX];
+    this->home = getenv("HOME");
+    getcwd(cwd,sizeof(cwd));
+    std::string dir = cwd;
+    this->cwd = dir == "" ? "??" : eraseSubStr(dir, home);
+    this->shellPrefix = cyan() + "root " + boldGreen() + this->cwd +  boldRed() + " → " + " " + reset();
 };
 int Shell::run(const std::string& commandName, const std::vector<std::string>& commandArgs) {
     Command* cmd = this->commands().at(commandName);

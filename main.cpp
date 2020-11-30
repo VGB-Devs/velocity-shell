@@ -4,7 +4,6 @@
 #include "include/shell/Shell.hpp"
 #include "include/util/output/Output.hpp"
 #include <fstream>
-
 int main() {
     Shell vsh;
 	/*
