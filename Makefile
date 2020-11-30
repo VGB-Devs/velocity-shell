@@ -7,9 +7,11 @@ compile:
 	shell/commands/pwd/Pwd.cpp \
 	shell/commands/clear/Clear.cpp \
 	shell/commands/read/Read.cpp \
+	shell/commands/write/Write.cpp \
+	shell/commands/file/File.cpp \
 	shell/Input.cpp \
 	shell/Shell.cpp \
 	util/colors/Colors.cpp \
 	util/prefix/Prefix.cpp \
 	util/output/Output.cpp \
-	-o velocity-shell
+	-o vsh

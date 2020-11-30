@@ -9,6 +9,8 @@
 #include "../include/shell/commands/pwd/Pwd.hpp"
 #include "../include/shell/commands/clear/Clear.hpp"
 #include "../include/shell/commands/read/Read.hpp"
+#include "../include/shell/commands/write/Write.hpp"
+#include "../include/shell/commands/file/File.hpp"
 
 Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("echo", new Echo()));
@@ -16,6 +18,8 @@ Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("pwd", new Pwd()));
     this->commands().insert(std::pair<std::string, Command*>("clear", new Clear()));
     this->commands().insert(std::pair<std::string, Command*>("read", new Read()));
+    this->commands().insert(std::pair<std::string, Command*>("write", new Write()));
+    this->commands().insert(std::pair<std::string, Command*>("file", new File()));
 };
 int Shell::run(const std::string& commandName, const std::vector<std::string>& commandArgs) {
     Command* cmd = this->commands().at(commandName);
