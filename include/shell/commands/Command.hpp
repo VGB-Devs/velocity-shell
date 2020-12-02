@@ -7,7 +7,7 @@ class Command {
         ~Command() {};
         std::string& name() { return this->commandName; }
         std::string& description() { return this->commandDescription; }
-        std::string& usage() { return this->commandDescription; }
+        std::string& usage() { return this->commandUsage; }
         auto& args() { return this->commandArgs; }
         auto& aliases() { return this->commandAliases; }
         virtual std::string run(const std::vector<std::string>& commandArgs) = 0;

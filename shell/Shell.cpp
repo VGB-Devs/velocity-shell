@@ -18,6 +18,7 @@
 #include "../include/shell/commands/exit/Exit.hpp"
 #include "../include/shell/commands/ping/Ping.hpp"
 #include "../include/shell/commands/reset/Reset.hpp"
+#include "../include/shell/commands/manual/Manual.hpp"
 
 Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("echo", new Echo()));
@@ -32,6 +33,8 @@ Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("exit", new Exit()));
     this->commands().insert(std::pair<std::string, Command*>("ping", new Ping()));
     this->commands().insert(std::pair<std::string, Command*>("reset", new Reset()));
+    this->commands().insert(std::pair<std::string, Command*>("man", new Manual(this)));
+
     char cwd[PATH_MAX];
     this->home = getenv("HOME");
     getcwd(cwd,sizeof(cwd));

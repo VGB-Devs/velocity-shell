@@ -14,6 +14,7 @@ compile:
 	shell/commands/exit/Exit.cpp \
 	shell/commands/ping/Ping.cc \
 	shell/commands/reset/Reset.cc \
+	shell/commands/manual/Manual.c++ \
 	shell/Input.cpp \
 	shell/Shell.cpp \
 	util/colors/Colors.cpp \
