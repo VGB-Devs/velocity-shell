@@ -16,7 +16,8 @@
 #include "../include/shell/commands/delete/Delete.hpp"
 #include "../include/shell/commands/prompt/Prompt.hpp"
 #include "../include/shell/commands/exit/Exit.hpp"
-#include "../include/shell/commands/ping/Ping.hxx"
+#include "../include/shell/commands/ping/Ping.hpp"
+#include "../include/shell/commands/reset/Reset.hpp"
 
 Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("echo", new Echo()));
@@ -30,6 +31,7 @@ Shell::Shell() {
     this->commands().insert(std::pair<std::string, Command*>("prompt", new Prompt(this)));
     this->commands().insert(std::pair<std::string, Command*>("exit", new Exit()));
     this->commands().insert(std::pair<std::string, Command*>("ping", new Ping()));
+    this->commands().insert(std::pair<std::string, Command*>("reset", new Reset()));
     char cwd[PATH_MAX];
     this->home = getenv("HOME");
     getcwd(cwd,sizeof(cwd));
