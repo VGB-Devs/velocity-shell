@@ -2,9 +2,9 @@
 #include "../../Shell.hpp"
 
 
-class Manual : public Command {
+class Usage : public Command {
     public:
-        Manual(Shell* shell);
+        Usage(Shell* shell);
         std::string run(const std::vector<std::string>& args);
 
     private:

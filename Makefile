@@ -12,13 +12,13 @@ compile:
 	shell/commands/delete/Delete.cpp \
 	shell/commands/prompt/Prompt.cpp \
 	shell/commands/exit/Exit.cpp \
-	shell/commands/ping/Ping.cc \
-	shell/commands/reset/Reset.cc \
-	shell/commands/manual/Manual.c++ \
+	shell/commands/ping/Ping.cpp \
+	shell/commands/reset/Reset.cpp \
+	shell/commands/usage/Usage.cpp \
 	shell/Input.cpp \
 	shell/Shell.cpp \
 	util/colors/Colors.cpp \
 	util/prefix/Prefix.cpp \
 	util/output/Output.cpp \
-	util/string/String.cc \
+	util/string/String.cpp \
 	-o vsh

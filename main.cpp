@@ -1,9 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "include/util/colors/Colors.hpp"
 #include "include/shell/Shell.hpp"
 #include "include/util/output/Output.hpp"
-#include <fstream>
 int main() {
     Shell vsh;
 	system("clear");
