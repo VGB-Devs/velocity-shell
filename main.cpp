@@ -2,10 +2,12 @@
 #include <vector>
 #include "include/shell/Shell.hpp"
 #include "include/util/output/Output.hpp"
-int main() {
+#include "include/shell/Raw.h"
+int main(int argc, char** argv) {
     Shell vsh;
 	system("clear");
 	while(true) {
+		disableCntrlC(argc, argv); // Disables contrl + c signal request. IMPLEMENT A CNTRL D BLOCKER
 		std::cout << vsh.prefix();
 		std::vector<std::string> args = vsh.input.get();
 		if(args.empty()){

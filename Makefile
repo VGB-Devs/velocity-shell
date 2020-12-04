@@ -17,6 +17,7 @@ compile:
 	shell/commands/usage/Usage.cpp \
 	shell/Input.cpp \
 	shell/Shell.cpp \
+	shell/Raw.c \
 	util/colors/Colors.cpp \
 	util/prefix/Prefix.cpp \
 	util/output/Output.cpp \
