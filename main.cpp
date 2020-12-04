@@ -5,7 +5,7 @@
 #include "include/shell/Raw.h"
 int main(int argc, char** argv) {
     Shell vsh;
-	system("clear");
+	std::cout << "\033[H\033[2J";
 	while(true) {
 		disableCntrlC(argc, argv); // Disables contrl + c signal request. IMPLEMENT A CNTRL D BLOCKER
 		std::cout << vsh.prefix();

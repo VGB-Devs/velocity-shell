@@ -1,1 +1,2 @@
-completely restarts the shell into a fresh state
+completely restarts the shell into a fresh state.
+example usage: reset

@@ -1,0 +1,2 @@
+execute a system command
+example usage: exec <command> <args>

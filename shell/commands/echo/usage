@@ -1,3 +1,3 @@
-Echo something to your terminal.
+Repeats the given input
+example usage: echo <text>
 
-Arguments from the second will be echoed.

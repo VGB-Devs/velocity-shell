@@ -1,0 +1,2 @@
+Writes a to a file with the given output
+example usage: write <file_name> <output>
